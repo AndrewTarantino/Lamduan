@@ -1,38 +1,205 @@
+/* App.css */
+
+/* Import the custom font */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif; /* Set the default font */
+  cursor: url('currsor.png') 32 32, auto !important; /* Set custom cursor */
+}
+
 .App {
+  cursor: url('./currsor.png') 16 16, auto;
+  background-image: url('./Lamduan.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  display: flex;
+  flex-direction: column; /* Stack items vertically */
+  justify-content: flex-start; /* Align items at the top */
+  align-items: center; /* Center items horizontally */
+  color: white;
   text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+  min-height: 100vh; /* Ensure full viewport height */
+  transition: background 0.5s ease; /* Smooth background transition */
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  width: 90%; /* Responsive width */
+  max-width: 600px; /* Max width for larger screens */
+  padding: 20px;
+
+  /* Background behind the text */
+  background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black */
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Subtle shadow */
+  display: flex; /* Flexbox for vertical centering */
+  flex-direction: column; /* Align children vertically */
+  align-items: center; /* Center items horizontally */
+  justify-content: center; /* Center items vertically */
+}
+
+.welcome-message {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  font-size: 2.5em; /* Large font size */
+  font-weight: bold; /* Bold text */
+  padding: 20px; /* Inner spacing */
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.8); /* Strong shadow for depth */
+  color: #ffffff; /* White text */
+  background-color: rgba(0, 0, 0, 0.7); /* Darker semi-transparent background */
+  border: 3px solid #61dafb; /* Solid border */
+  border-radius: 15px; /* Rounded corners */
+  max-width: 80%; /* Limit the width */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5); /* Soft shadow */
+}
+
+/* Optional: Hover effect */
+.welcome-message:hover {
+  transform: scale(1.05); /* Slightly increase size on hover */
+}
+
+.logo {
+  width: 80%; /* Responsive width */
+  max-width: 500px; /* Max width for larger screens */
+  height: auto; /* Maintain aspect ratio */
+  margin-bottom: 20px; /* Space below logo */
 }
 
 .App-link {
   color: #61dafb;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-decoration: underline; /* Link appearance */
+  font-size: calc(1rem + 0.5vw); /* Responsive font size */
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+/* Hover effect for links */
+.App-link:hover {
+  color: #21a1f1; /* Change color on hover */
+}
+
+.content {
+  display: flex; /* Flexbox for layout */
+  flex-direction: row; /* Row alignment */
+  align-items: flex-start; /* Top alignment */
+  justify-content: flex-start; /* Start alignment */
+  color: white; /* Text color */
+  text-align: left; /* Left alignment */
+  margin: 20px; /* Margin */
+  position: relative; /* Relative positioning */
+  top: 100px; /* Move down from the top */
+}
+
+.lamduan-title {
+  font-size: 3em; /* Title font size */
+  font-weight: bold; /* Bold text */
+  color: #ffffff; /* White text */
+  padding: 10px; /* Padding */
+  background-color: rgba(0, 0, 0, 0.8); /* Solid background with opacity */
+  border-radius: 10px; /* Rounded corners */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Shadow for readability */
+  margin: 0; /* Remove margin */
+}
+
+.explanation {
+  max-width: 400px; /* Max width */
+  padding: 20px; /* Padding */
+  background-color: rgba(0, 0, 0, 0.8); /* Solid background */
+  border-radius: 10px; /* Rounded corners */
+  margin-left: 20px; /* Space between title and explanation */
+  color: #ffffff; /* Text color */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Shadow */
+}
+
+.explanation p {
+  font-size: 1.5em; /* Explanation font size */
+  line-height: 1.6; /* Line spacing */
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 768px) {
+  .App-header {
+    padding: 10px; /* Less padding on smaller screens */
   }
-  to {
-    transform: rotate(360deg);
+
+  .logo {
+    width: 90%; /* Logo takes more space on smaller screens */
+  }
+
+  .lamduan-title {
+    font-size: 1.5em; /* Adjust title size on smaller screens */
+  }
+
+  .welcome-message {
+    font-size: 2em; /* Smaller font size for welcome message */
+  }
+}
+
+.second-background {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-image: url('./background.jpg');
+  background-size: cover;
+  background-position: center;
+  z-index: -1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 20px 0;
+}
+
+.text-wrapper {
+  background-color: rgba(0, 0, 0, 0.8);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  margin-top: 20px;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.social-icon {
+  width: 100%; /* Will be overridden by media queries */
+  height: auto; /* Maintain aspect ratio */
+  margin: 0 15px; /* Space between icons */
+  transition: transform 0.3s; /* Hover effect */
+}
+
+.social-icon:hover {
+  animation: wave 0.5s ease-in-out infinite; /* Infinite waving animation */
+}
+
+@keyframes wave {
+  0% { transform: rotate(0deg); }
+  25% { transform: rotate(10deg); }
+  50% { transform: rotate(0deg); }
+  75% { transform: rotate(-10deg); }
+  100% { transform: rotate(0deg); }
+}
+
+/* For smaller screens (tablets and phones), adjust the icon size */
+@media (min-width: 1024px) {
+  .social-icon {
+    max-width: 300px; /* Ensure max size on larger screens */
+  }
+}
+
+@media (max-width: 768px) {
+  .social-icon {
+    min-width: 50px; /* Ensure min size on smaller screens */
   }
 }
